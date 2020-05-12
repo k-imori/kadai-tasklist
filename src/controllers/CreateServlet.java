@@ -45,6 +45,9 @@ public class CreateServlet extends HttpServlet {
             m.setCreated_at(currentTime);
             m.setUpdated_at(currentTime);
 
+            String content = request.getParameter("content");
+            m.setContent(content);
+
          // バリデーションを実行してエラーがあったら新規登録のフォームに戻る
             List<String> errors = TaskValidator.validate(m);
             if(errors.size() > 0) {
